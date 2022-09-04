@@ -30,6 +30,20 @@ module.exports.updateUser =(req,res)=>{
 
     res.send(newData)
 }
+// update all user
+module.exports.updateAllUser =(req,res)=>{
+    const {id }=req.body;
+
+    const newInfo = users.find(user=> user.id == id);
+    newInfo.id = id;
+    newInfo.gender = req.body.gender;
+    newInfo.name = req.body.name;
+    newInfo.contact = req.body.contact;
+    newInfo.address = req.body.address;
+    newInfo.photoUrl = req.body.photoUrl;
+
+    res.send(newInfo)
+}
 // delete a user
 module.exports.deleteUser =(req,res)=>{
     const {id}= req.params;
