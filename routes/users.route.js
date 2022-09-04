@@ -5,6 +5,8 @@ const router = express.Router()
 
 router.route("/all").get(usersControllers.getAllUser)
 router.route("/save").post(usersControllers.saveAUser)
-router.route("/:id").patch(usersControllers.updateUser)
+router.route("/:id")
+.patch(usersControllers.updateUser)
+.delete(usersControllers.deleteUser)
 
 module.exports = router;

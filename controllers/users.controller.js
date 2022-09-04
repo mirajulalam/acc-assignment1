@@ -25,3 +25,9 @@ module.exports.updateUser =(req,res)=>{
 
     res.send(newData)
 }
+// delete a user
+module.exports.deleteUser =(req,res)=>{
+    const {id}= req.params;
+    const deleteUser = users.filter(user => user.id !== Number(id));
+    res.send(deleteUser)
+}
