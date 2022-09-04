@@ -1,6 +1,11 @@
 const res = require("express");
 const users = require("../users.json")
 
+// get one random user
+module.exports.getRandomUser = (req,res) =>{
+    const chosenPath = users[Math.floor(Math.random() * (users.length))]; 
+    res.send(chosenPath)
+};
 // get All user
 module.exports.getAllUser = (req,res) =>{
     const {limit}=req.query;
